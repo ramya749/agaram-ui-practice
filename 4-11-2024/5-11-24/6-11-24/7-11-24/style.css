@@ -1,0 +1,42 @@
+body{
+
+    background:url("https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2554.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: xx-large;
+    text-align: center;
+}   
+.box{
+    background-image: url("https://m.media-amazon.com/images/I/71NQ8HuXTmL.jpg");
+    height: 200px;
+    width:200px;
+    background-size:cover;
+    border-style: dotted;
+
+}
+.parent{
+    box-sizing: 10px;
+    border-style: groove;
+    height:200px;
+    width:200px;
+    border-style: dashed;
+    border-radius: 10px;
+    
+}
+.child{
+    width:200px;
+    height:200px;
+    border-style:double;
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSdTWpQPp8dm18-_DWzu9z6Z8yKAI-ZvR0aw&s");
+    background-position:center;
+    background-repeat:repeat-y;
+    background-size: cover;
+    block-size: 150px;
+    writing-mode: vertical-lr;
+    
+
+        
+}
+
+
+ 

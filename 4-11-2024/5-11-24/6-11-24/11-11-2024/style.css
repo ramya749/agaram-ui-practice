@@ -1,0 +1,33 @@
+.header{
+    width: 1100px;
+    height: 70px;
+    border:1px solid brown;
+    font-size: xx-large;
+    text-align: center;
+    background-color:aquamarine;
+    bottom:10;
+    right:40;
+    position: sticky;
+}
+
+.main{
+    margin-top:100px;
+    
+}
+.child{
+    width: 200px;
+    height: 400px;
+    border:1px solid brown;
+    background-color:burlywood;
+    bottom:0;
+    right:50;
+    position: fixed;
+}
+
+
+
+
+    
+    
+    
+

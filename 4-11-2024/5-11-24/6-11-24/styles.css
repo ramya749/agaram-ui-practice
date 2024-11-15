@@ -1,0 +1,103 @@
+.header{
+    border-style:groove;
+    border-radius: 30px;
+    background-color:peru;
+    width:100%;
+    height:80px;
+    padding:10px;
+    margin-top:5px;
+    
+}
+.list{
+    list-style: none;
+    font-size: x-large;
+}
+.con{
+    border-width:10px;
+    border-style:groove;
+    background-color:yellowgreen ;
+    
+}
+.con-child{
+    display:inline-block;
+}
+.child-1{
+    width:20%;
+    background-color: bisque;
+    height: 400px;
+}
+.child-2{
+    width: 800px;
+    background-color:aqua;
+    height:700px;
+    text-align: center;
+}
+.box{
+    width:300px;
+    background-color:azure;
+    height:300px;
+    display:inline-block;
+    margin:20px 10px;
+}
+.footer{
+    border-style:solid ;
+    font-size:x-large;
+    background-color: aquamarine;
+}
+
+
+.main{
+    border-style: double;
+    border-color:rgb(158, 95, 12);
+    font-size: xx-large;
+    border-width: 10px;
+    width: 1050px;
+    height:40px;
+    text-align: center;
+    margin-top:50px;
+    
+}
+.main-1{
+    border-style:double;
+    border-color:rgb(133, 84, 21);
+    font-size: xx-large;
+    border-width: 10px;
+    width: 1050px;
+    height:40px;
+    text-align: center;
+    
+}
+.table-1{
+    border-style:double;
+    border-width: 10px;
+    width:290px;
+    height:300px;
+    display:inline-block;
+    border-color: rgb(155, 94, 15);
+}
+.table-2{
+    border-style:double;
+    border-color: rgb(153, 97, 24);
+    border-width: 10px;
+    width:417.6px;
+    height:300px;
+    display:inline-block; 
+}
+.table-3{
+    border-style:double;
+    border-color: rgb(133, 84, 21);
+    border-width: 10px;
+    width:290px;
+    height:300px;
+    display:inline-block;
+}
+.footer-1{
+    border-style: double;
+    border-color:rgb(124, 72, 4);
+    width:1050px;
+    height:40px;
+    border-width: 10px;
+    font-size: xx-large;
+    text-align: center;
+
+}
