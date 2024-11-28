@@ -37,7 +37,7 @@ function printmyname(){
   value(7,3,7,6)
   
   function fullname(p,q){
-    let sum=(p+q)
+    let sum=(p+q);
     console.log(sum);  
   }
   fullname("agaram", " acadamy")
@@ -151,7 +151,29 @@ function printmyname(){
   else{
     console.log("you are not eligible")
   }
-  
+ 
+
+
+  let marks={
+    t:80,
+    e:80,
+    m:80,
+    s:80,
+    si:80
+    
+    
+  }
+  function add(t,e,m,s,si){
+    return t+e+m+s+si/5;
+  }
+  let outputs=add(mark.t,mark.e,mark.m,mark.s,mark.si)
+  if(outputs==80){
+    console.log("You are eligible")
+  }
+  else{
+    console.log("You are not eligible")
+  }
+ 
   
   
   
