@@ -18,8 +18,10 @@ let details={
             ]}
   ]
   }
+
   let tmp1=details.Batches[0].students;
   console.log(tmp1[0].skills[0]+","+tmp1[0].skills[1]+","+tmp1[1].skills[0]+","+tmp1[1].skills[1])
+
   
   if(details.Batches[0].students[0].age==20){
       console.log(details.Batches[0].students[0].name)
@@ -134,3 +136,13 @@ let marks={
   else if(percentage<40){
     console.log("Grade F")
   }
+
+
+
+ if( details.Batches[0].students[0].skills){
+    console.log(details.Batches[0].students[0].sklills[0]+""+details.Batches[0].students[0].sklills[1]+""+""+details.Batches[0].students[0].sklills[2]+""+details.Batches[1].students[0].sklills[0])
+    }
+      
+     details.Batches[0].students[0].skills.push("java"){
+      console.log(details.Batches[0].students[0].skills);
+    }
