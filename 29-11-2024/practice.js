@@ -1,5 +1,5 @@
 let num1=45;
-let num2=45;
+let num2=55;
 if(num1>num2){
   console.log("num1 is maximum");
 }
@@ -17,13 +17,13 @@ let a=25;
 let b=36;
 let c=32;
 if(a>b && a>c){
-  console.log("num1 is maximum");
+  console.log("a is maximum");
 }
 else if(b>a && b>c){
-  console.log("num2 is maximum");
+  console.log("b is maximum");
 }
 else if(c>a && c>b){
-  console.log("num3 is maximum");
+  console.log("c is maximum");
 }
 else{
   console.log("not maximum")
@@ -68,6 +68,16 @@ else{
   console.log("not leap year");
 }
 
+// alphabet
+let texts="A";
+if(texts>="a"&&texts<="z"){
+  console.log("alphabet");
+}
+else{
+  console.log("not");
+}
+
+
 // vowels or consonent
 let text="y";
 if(text=="a"||text=="e"||text=="i"||text=="o"||text=="u"){
@@ -107,29 +117,18 @@ else{
 // week in days
 
 
-let day=2
-if(day==1){
-  console.log("sunday");
-}
-else if(day==2){
-  console.log("monday");
-}
-else if(day==3){
-  console.log("tuesday");
-}else if(day==4){
-  console.log("wednesday");
-}else if(day==5){
-  console.log("thursday");
-}else if(day==6){
-  console.log("friday");
-}
-else if(day==7){
-  console.log("saturday");
-  
-}
-else{
-  console.log("check")
-}    
+let inputs=5;
+let weeks=[
+  {name:"sunday",day:1},
+  {name:"monday",day:2},
+  {name:"tuesday",day:3},
+  {name:"wednesday",day:4},
+  {name:"thursday",day:5},
+  {name:"friday",day:6},
+  {name:"saturday",day:7}
+]
+console.log(weeks[inputs-1].name);
+
 
 // number of days in month
 let input=3;
@@ -156,7 +155,7 @@ let angle1=60;
 let angle2=60;
 let angle3=60;
 if(angle1+angle2+angle3==180){
-  console.log("valid");
+  console.log("triangle");
 }
 else{
   console.log("not");
