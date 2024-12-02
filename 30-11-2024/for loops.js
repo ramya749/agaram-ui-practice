@@ -34,14 +34,6 @@ for(let each in mark){
 console.log(totals);
 
 
-let markk=[90,80,95,50,70,60]
-let tota=0;
-for(let each in markk){
-  tota=tota+markk[each];
-}
-console.log(tota);
-
-
 let students=[{
   name:"stu1",
   age:20,
@@ -75,3 +67,27 @@ for(let m of each.marks){
   console.log(each.name+" "+"mark"+" "+"is"+" "+result);
   result=0;
 }
+// add eligible
+
+for(let each of students){
+  if(each.age>=25){
+    each.eligible=true;
+    each.skills=["python,css"]
+  }
+     else{
+        each.eligible=false;
+      
+     }
+      
+ 
+  }   
+console.log(students);
+
+let m=[]
+for(let each of students){
+  if (each.age>=25){
+  m.push(each.name);
+   
+  }
+}
+ console.log(m);
