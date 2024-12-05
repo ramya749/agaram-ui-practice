@@ -61,3 +61,16 @@ let students=[{
       console.log("-");
     }
      console.log(total);
+
+// reverse value     
+let sett=[2,3,4];
+let temp=[];
+for(let i in sett){
+ 
+
+temp.push(sett[sett.length-(parseInt(i)+1)]);
+ 
+} 
+console.log(temp);
+sett=temp;
+console.log(sett);

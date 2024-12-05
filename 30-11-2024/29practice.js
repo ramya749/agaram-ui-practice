@@ -51,7 +51,7 @@ else if(basic_salary<=20000){
 else if(basic_salary>20000){
   hra=30;
   da=95;
-}/
+}
 let hra_amount=basic_salary*hra/100;
 let da_amount=basic_salary*da/100;
 let final=basic_salary+hra_amount+da_amount;
