@@ -6,7 +6,7 @@ class Users{
         console.log(a*b);  
       }
     }
-    let obj=new Users("ramya");
+    let object=new Users("ramya");
     obj.login(8,7)
     
     
