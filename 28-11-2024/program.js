@@ -39,6 +39,9 @@ let details={
     }
 
 
+    details.Batches[0].students[0].skills.push("java");
+console.log(details.Batches[0].students[0].skills);
+
     details.Batches.push(
         {name:"Batch3",
                    year:2024,

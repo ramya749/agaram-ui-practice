@@ -39,7 +39,7 @@ for(let each of number){
 
 let numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50
 ]
-sum=0;
+let sum=0;
 for(let val of numbers){
 sum=sum+val;
 
@@ -113,6 +113,16 @@ for(let i=1;i<=values;i++){
 }
 console.log(star);
 
+let valuess=5;
+let starr="\n";
+for(let i=5;i>=1;i--){
+  for(let j=1;j<=i;j++){
+    starr=starr+"*";
+  }
+  starr=starr+"\n";
+}
+console.log(starr);
+
 // Write a for loop to print the multiplication table of a number provided by the user. Use
 // prompt to get the number
 let a=2;
@@ -136,4 +146,4 @@ for(let n of numbe){
   if(count>1){
     console.log(n+ "is duplicate");
   }
-}
+} 

@@ -35,7 +35,7 @@ let students=[{
      
     }
   }
-//    console.log(m); 
+   console.log(m); 
 //     Write a JavaScript program that displays the largest integer among array of integers
 
   let value=[3,5,6,2,5,28,12,56,32];
