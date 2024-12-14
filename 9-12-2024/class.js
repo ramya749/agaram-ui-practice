@@ -32,30 +32,31 @@ class Users{
     // let email_address=obj.getEmail;
     // console.log(email_address);
     
-    
+   
+
+
     class Parent{
       constructor(p_name){
         this.p_name=p_name;    
       }
       getName(){
-        return this.p_name;
+        console.log(this.p_name);
       }
     }
-    let parobj=new Parent("murugan")
     
     class Child extends Parent{
-      constructor(name,p_name){
+      constructor(c_name,p_name){
         super(p_name)
-        this.name=name;
+        this.c_name=c_name;
     
       }
       getChildName(){
-        let v=super.getName();
-        console.log(v);
+        this.getName();
+        console.log(this.c_name);
       }
     }
     let childobj=new Child("ramya","murugan")
-    console.log(childobj)
+    childobj.getChildName();
     
     
     

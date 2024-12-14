@@ -49,7 +49,7 @@ document.getElementById("submit").addEventListener('click', function (e) {
             personal_details:JSON.stringify(resume.personal_details)
 
         });
-    alert("login successful !");
+    alert("done!");
 })
 
 
