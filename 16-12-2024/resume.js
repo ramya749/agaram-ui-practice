@@ -6,13 +6,17 @@ let resume = {
     education: [],
     project: [],
     certification:[],
-    work_experience:[]
+    work_experience:[],
+    name:[],
+    objective:[],
+    place:[],
+    date:[]
 
 
 }
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import {getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+import {getDatabase, ref,onValue, push,remove,set, get, child } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -31,26 +35,63 @@ const app = initializeApp(firebaseConfig);
 
 //   get ref to database service
 const db = getDatabase(app);
-document.getElementById("submit").addEventListener('click', function (e) {
-    e.preventDefault();
-    set(ref(db, 'user/' + document.getElementById("name").value),
+const tblName='user/';
+const initialDBData = ref(db,tblName);
+function createResume(){
+push(initialDBData,
         {
-            Name: document.getElementById("name").value,
-            Objective: document.getElementById("objective").value,
-            Place: document.getElementById("places").value,
-            Date: document.getElementById("datevalue").value,
-            education:JSON.stringify(resume.education),
-            project:JSON.stringify(resume.project),
-            certification:JSON.stringify(resume.certification),
-            hobbies:JSON.stringify(resume.hobbies),
-            language:JSON.stringify(resume.language),
-            skills:JSON.stringify(resume.skills),
-            work_experience:JSON.stringify(resume.work_experience),
-            personal_details:JSON.stringify(resume.personal_details)
-
+            Name: resume?.name,
+            Objective: resume?.objective,
+            Place: resume?.place,
+            Date: resume?.date,
+            education:JSON.stringify(resume?.education),
+            project:JSON.stringify(resume?.project),
+            certification:JSON.stringify(resume?.certification),
+            hobbies:JSON.stringify(resume?.hobbies),
+            language:JSON.stringify(resume?.language),
+            skills:JSON.stringify(resume?.skills),
+            work_experience:JSON.stringify(resume?.work_experience),
+            personal_details:JSON.stringify(resume?.personal_details)
         });
     alert("done!");
-})
+    window.location.href="list.html";
+}
+window.createResume=createResume
+function display(){
+    let list=[];
+    onValue(initialDBData, (snapshot) => {
+        const data = snapshot.val();
+        let userArray = Object.entries(data);
+        let trs=" ";
+        let index=1;
+        for(let each of userArray){
+            trs = trs + `<tr>
+            <td>${index}</td>
+            <td>${each[1].Name}</td>
+            <td>${JSON.parse(each[1].personal_details).email}</td>
+            <td>
+            <button onclick="deleteResume('${each[0]}')">Delete</button>
+            <button>Edit</button>
+            </td>
+        </tr>`       
+          
+        index=index+1;
+            // list.push(each[1]);
+        }
+        document.getElementById("tbody").innerHTML=trs;
+    });
+    // console.log(list);
+
+
+}
+window.display=display;
+display();
+
+function deleteResume(id){
+    let data=ref(db,`${tblName}${id}`)
+    remove(data);
+}
+window.deleteResume=deleteResume
 
 
 

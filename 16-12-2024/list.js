@@ -49,9 +49,7 @@ function display(){
             <button>Delete</button>
             <button>Edit</button>
             </td>
-        </tr>`
-            
-            
+        </tr>`       
           
         index=index+1;
             // list.push(each[1]);
