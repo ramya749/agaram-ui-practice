@@ -34,7 +34,6 @@ const db = getDatabase(app);
 const initialDBData = ref(db,'user/');
 
 function display(){
-    let list=[];
     onValue(initialDBData, (snapshot) => {
         const data = snapshot.val();
         let userArray = Object.entries(data);
