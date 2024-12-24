@@ -57,6 +57,8 @@ function createResume() {
     window.location.href = "list.html";
 }
 window.createResume = createResume;
+// ---<>---
+
 function display() {
     let list = [];
     onValue(initialDBData, (snapshot) => {

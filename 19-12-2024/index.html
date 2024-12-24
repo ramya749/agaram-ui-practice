@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>User Details</h3>
+    <form id="userDetails">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Name"/>
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="text" id="age" placeholder="Age"/>
+        </div>
+    <input class="btn btn-primary"  type="submit" onclick="createResume()" id="submit" value="Submit">
+    </form>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody id="tlbody">
+            <!-- <tr>
+                <td>1</td>
+                <td>Ramya</td>
+                <td>24</td>
+                <td><button>Delete</button>
+                <button>Edit</button></td>
+    
+    
+            </tr> -->
+        </tbody>
+    </table>
+</body>
+
+<script src="./index.js" type="module"></script>
+<div>
+       
+
+    <input type="text" id="update_name"/>
+    <input type="text" id="update_age"/>
+    <input type="hidden"id="update_id"/>
+   
+    <button onclick="updateResume()">Update</button>
+</div>
+<!-- <script>
+setTimeout(() => {
+  display()
+}, 2000);
+    </script> -->
+</html>
