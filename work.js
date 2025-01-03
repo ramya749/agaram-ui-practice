@@ -75,6 +75,102 @@ function display(){
 }
 window.display=display;
 
+function display1(list,id){
+    let ul="";
+    for(let each of list){
+        ul=ul+`
+        <li>${each}</li>
+        `
+    };
+    document.getElementById(id).innerHTML=ul;
+
+}
+window.display1=display1;
+
+function display2(){
+    let trs="";
+    for(let each of resume.education){
+        trs=trs+`  <tr>
+                        <th>${each.course_institute}</th>
+                        <th>${each.course_name}</th>
+                        <th>${each.course_year}</th>
+                        <th>${each.course_percentage}</th>
+
+                    </tr>
+        `
+    };
+    document.getElementById("tabody").innerHTML=trs;
+   
+}
+window.dispaly2=display2;
+
+
+function deleteOption(id){
+    alert("delete conform");
+    let data = ref(db, `${tblName}${id}`);
+    remove(data);
+}
+window.deleteOption=deleteOption;
+
+function editOption(id,data){
+    const{email,fathername,mothername}=JSON.parse(data.personal_details);
+    document.getElementById('updatename').value=data.name;
+    document.getElementById('updateid').value=id;
+    document.getElementById('updateobjective').value=data.objective;
+    document.getElementById('updateemail').value=email;
+    document.getElementById('updatefathername').value=fathername;
+    document.getElementById('updatemothername').value=mothername;
+
+    resume.name=data.name;
+    resume.objective=data.objective;
+    resume.personal_details.email=email;
+    resume.personal_details.fathername=fathername;
+    resume.personal_details.mothername=mothername;
+
+    let skills=JSON.parse(data.skills);
+    resume.skills=skills;
+    display1(resume.skills,"tbody");
+
+    let hobbies=JSON.parse(data.hobbies);
+    resume.hobbies=hobbies;
+    display1(resume.hobbies,"tllbody");
+
+    let education=JSON.parse(data.education)
+    resume.education=education;
+    display2();
+
+}
+window.editOption=editOption
+
+function updateOption(){
+    alert("update");
+    let id=document.getElementById('updateid').value;
+    let name=resume.name;
+    let objective=resume.objective;
+    let email=resume.personal_details.email;
+    let fathername=resume.personal_details.fathername;
+    let mothername=resume.personal_details.mothername;
+    let skills=resume.skills;
+    let hobbies=resume.hobbies;
+    let education=resume.education;
+
+    let p_details={
+        email:email,
+        fathername:fathername,
+        mothername:mothername,
+    }
+    set(ref(db,'user/'+id),{
+        name:name,
+        objective:objective,
+        personal_details:JSON.stringify(p_details),
+        skills:JSON.stringify(skills),
+        hobbies:JSON.stringify(hobbies),
+        education:JSON.stringify(education),
+
+    });
+
+}
+window.updateOption=updateOption
 
 function addValue(e,key,p_key){
     if(p_key){
@@ -88,55 +184,18 @@ function addValue(e,key,p_key){
 }
 window.addValue=addValue;
 
-function deleteOption(id){
-    alert("delete conform");
-    let data = ref(db, `${tblName}${id}`);
-    remove(data);
-}
-window.deleteOption=deleteOption;
-
-function editOption(id,data){
-    const{email,fathername,mothername}=JSON.stringify(data.personal_details);
-    document.getElementById('name').value=data.name;
-    document.getElementById('updateid').value=id;
-    document.getElementById('objective').value=data.objective;
-    document.getElementById('email').value=email;
-    document.getElementById('fathername').value=fathername;
-    document.getElementById('mothername').value=mothername;
-
-    resume.name=data.name;
-    resume.objective=data.objective;
-    resume.personal_details.email=email;
-    resume.personal_details.fathername=fathername;
-    resume.personal_details.mothername=mothername;
-}
-window.editOption=editOption
-
-function updateOption(){
-    alert("update");
-    let id=document.getElementById('updateid').value;
-    let name=resume.name;
-    let objective=resume.objective;
-    let email=resume.personal_details.email;
-
-    let p_details={
-        email:email,
-    }
-    set(ref(db,'user/'+id),{
-        name:name,
-        objective:objective,
-        personal_details:JSON.stringify(p_details),
-    });
-
-}
-window.updateOption=updateOption
-
 function addValues(key){
     let value=document.getElementById(key).value;
     resume[key].push(value);
     document.getElementById(key).value="";  
 
     display_output();
+    if(key=="skills"){
+        display1(resume.skills,"tbody");
+    }
+    else if(key=="hobbies"){
+        display1(resume.hobbies,"tllbody");
+    }
 
 }
 window.addValues=addValues;
@@ -166,6 +225,7 @@ else if(key3){
     document.getElementById(key3).value;"";
 }
 display_output();
+display2();
 }
 window.addMultiValue=addMultiValue;
 
