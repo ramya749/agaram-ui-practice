@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="work.js" type="module"></script>
+    <title>Document</title>
+</head>
+
+<body>
+     <table border="1">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>name</th>
+                <th>objective</th>
+                <th>email</th>
+                <th>fathername</th>
+                <th>mothername</th>
+                <th>skills</th>
+                <th>action</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="tlbody">
+          
+        </tbody>
+    </table> 
+    <div class="container">
+        <h1>resume</h1>
+        <div>
+            <input type="hidden" id="updateid">
+            <label for="name">name</label>
+            <input type="text" placeholder="enter your name" id="name" onkeyup="addValue(this,'name',null)" />
+        </div>
+        <div class="box">
+            <div>
+                <label for="objective">objective</label>
+                <input type="text" placeholder="enter your objective" id="objective"
+                    onkeyup="addValue(this,'objective',null)" />
+            </div>
+        </div>
+        <h3>personal_details</h3>
+        <div class="box1">
+            <div>
+                <label for="email">email</label>
+                <input type="text" placeholder="enter your email" id="email"
+                    onkeyup="addValue(this,'email','personal_details')" />
+                <div>
+                </div>
+
+                <div>
+
+                    <label for="fathername">fathername</label>
+                    <input type="text" placeholder="enter your fathername" id="fathername"
+                        onkeyup="addValue(this,'fathername','personal_details')" />
+                </div>
+
+                <div>
+                    <label for="mothername">mothername</label>
+                    <input type="text" placeholder="enter your mothername" id="mothername"
+                        onkeyup="addValue(this,'mothername','personal_details')">
+                </div>
+                <h3>skills</h3>
+                <div>
+                    <label for="name">skills</label>
+                    <input type="text" placeholder="enter your skills" id="skills">
+                    <button type="button" onclick="addValues('skills')">ADD</button>
+                </div>
+            </div>
+
+            <h3>hobbies</h3>
+            <div>
+                <label for="name">hobbies</label>
+                <input type="text" placeholder="enter your hobbies" id="hobbies">
+                <button type="button" onclick="addValues('hobbies')">ADD</button>
+            </div>
+
+            <h3>education</h3>
+            <div>
+                <input type="text" placeholder="course_institute" id="course_institute">
+                <input type="text" placeholder="course_name" id="course_name">
+                <input type="text" placeholder="course_year" id="course_year">
+                <input type="text" placeholder="course_percentage" id="course_percentage">
+                <button type="button"
+                    onclick="addMultiValue('education','course_institute','course_name','course_year','course_percentage')">ADD</button>
+            </div>
+
+            <h3>project</h3>
+            <div>
+                <input type="text" placeholder="project_title" id="project_title">
+                <input type="text" placeholder="project_description" id="project_description">
+                <input type="text" placeholder="project_year" id="project_year">
+                <button type="button"
+                    onclick="addMultiValue('project','project_title','project_description','project_year')">ADD</button>
+            </div>
+            <div class="box2 mt-2">
+                <button type="text" onclick="createResume()" id="submit">Submit</button>
+            </div>
+
+        </div>
+        <button onclick="updateOption()">update</button>
+        <section>
+            <code id="output"></code>
+        </section>
+        <script>
+            setTimeout(()=>{
+                display()
+            },2000);
+        </script>
+</body>
+
+</html>

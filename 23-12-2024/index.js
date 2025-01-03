@@ -25,19 +25,23 @@ const db = getDatabase();
 const tblname = 'list/';
 const initialDBData = ref(db, tblname);
 function createData() {
+  if(input.value == ""){
+    alert("please fill up")
+  }
+  else{
   push(initialDBData,
     {
-      Name: document.getElementById("name").value
+      Name: document.getElementById("input").value
     });
   alert("done");
   clear();
-
+  }
 }
 window.createData = createData;
 
 // clear 
 function clear(){
-   document.getElementById("name").value=""
+   document.getElementById("input").value=""
 
 }
 // ----<>----
@@ -51,29 +55,33 @@ function display() {
       ul = ul+
       `
                 <li>
-                <a href="#"onclick="deleteList('${each[0]}')">
-                ${each[1].Name}</a><button onclick='editList("${each[0]}",${JSON.stringify(each[1])})'>Edit</button>
+                ${each[1].Name}
+                <button class="btn-delete" onclick="deleteList('${each[0]}')">
+                 <ion-icon name="trash-outline"></ion-icon></button>
+                <button class="btn-edit" onclick='editList("${each[0]}",${JSON.stringify(each[1])})'>
+                                <ion-icon name="create-outline" ></ion-icon></button>
+
                 </li>
             `  
     }
     document.getElementById("list").innerHTML = ul;
-
   });
   
 }
 window.display = display;
 display();
 
+
 function deleteList(id){
   alert("ok");
-  console.log(id);
+  // console.log(id);
   let data=ref(db,`list/${id}`);
   remove(data);
 }
 window.deleteList=deleteList
 
 function editList(id,data){
-  document.getElementById('name').value=data.Name;
+  document.getElementById('input').value=data.Name;
   document.getElementById('update_id').value=id;
   document.getElementById('addcart').style.display="none"; 
   document.getElementById('update').style.display="block";
@@ -83,7 +91,7 @@ window.editList=editList
 
 
 function updateList(){
-  let name=document.getElementById('name').value;
+  let name=document.getElementById('input').value;
   let id=document.getElementById('update_id').value;
  set(ref(db,'list/'+id),{
     Name:name,
