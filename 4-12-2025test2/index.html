@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Management System</h1>
+        <lable for="name">Name:</lable>
+        <input type="text" placeholder="enter your name" id="name" onkeyup="addValue(this,'name',null)"/>
+        <div>
+            <lable for="number">Roll Number:</lable>
+            <input type="number" placeholder="enter your number" id="rollnumber" onkeyup="addValue(this,'rollnumber',null)"/>
+        </div>
+        <div>
+            <h3>subject</h3>
+            <lable for="text">Subject:</lable>
+            <input type="text" placeholder="enter your subject" id="subject">
+            <button type="button" onclick="addValues('subject')">Add</button>
+        </div>
+        <div>
+            <h3>Exam score:</h3>
+            <lable for="text">maths:</lable>
+            <input type="number"placeholder="enter your mark" id="examscore" onkeyup="addValue(this,'maths','examscore')"/>
+        </div>
+        <div>
+            <lable for="text">science:</lable>
+            <input type="number"placeholder="enter your mark" id="examscore" onkeyup="addValue(this,'science','examscore')"/>
+        </div>
+        <h3>project:</h3>
+        <div>
+            <input type="text" placeholder="project_name" id="project_name">
+            <input type="text" placeholder="project_year" id="project_year">
+                <button type="button" onclick="addMultiValue('project','project_name','project_year')">Add</button>
+
+        </div>
+
+        <div>
+            <button type="text" id="submit" onclick="createOption()">Submit</button>
+        </div>
+        
+    </div>
+    <section>
+        <code id="output"></code>
+    </section>
+    
+</body>
+</html>

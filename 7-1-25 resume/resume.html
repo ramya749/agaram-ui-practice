@@ -18,19 +18,19 @@
     <div class="resume bg-light">
         <h1 class="text-center">Resume</h1>
         <div class="container p-5 ">
-            <div class="container1" >
+            <div class="container1">
                 <div class="mb-3 row">
                     <label for="Name" class="col-sm-2 col-form-label">Name:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" onkeyup="addValue(this,'name',null)"/>
+                        <input type="text" class="form-control" onkeyup="addValue(this,'name',null)" />
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Objective:</label>
                     <div class="col-sm-6">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" 
-                                style="height: 100px" onkeyup="addValue(this,'objective',null)"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px"
+                                onkeyup="addValue(this,'objective',null)"></textarea>
                             <label for="floatingTextarea2"></label>
                         </div>
                     </div>
@@ -39,8 +39,7 @@
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Email:</label>
                     <div class="col-sm-6">
-                        <input type="text"  class="form-control"
-                            onkeyup="addValue(this,'email','personal_details')" />
+                        <input type="text" class="form-control" onkeyup="addValue(this,'email','personal_details')" />
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -53,15 +52,14 @@
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Mother's Name:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" 
+                        <input type="text" class="form-control"
                             onkeyup="addValue(this,'mothername','personal_details')" />
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">DOB:</label>
                     <div class="col-sm-6">
-                        <input type="date" class="form-control" 
-                            onkeyup="addValue(this,'dob','personal_details')" />
+                        <input type="date" class="form-control" onkeyup="addValue(this,'dob','personal_details')" />
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -69,16 +67,15 @@
                     <div class="col-sm-5 mt-2">
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" 
-                                value="Male" onclick="addValue(this,'gender','personal_details')" />
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="male"
+                                onclick="addValue(this,'gender','personal_details')" />
                             <label class="form-check-label" for="inlineRadio1">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" 
-                                value="Female" onclick="addValue(this,'gender','personal_details')" />
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="female"
+                                onclick="addValue(this,'gender','personal_details')" />
                             <label class="form-check-label" for="inlineRadio2">Female</label>
                         </div>
-
                     </div>
                 </div>
 
@@ -86,23 +83,22 @@
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Nationality:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" 
+                        <input type="text" class="form-control"
                             onkeyup="addValue(this,'nationality','personal_details')" />
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Phone:</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" 
-                            onkeyup="addValue(this,'phone','personal_details')" />
+                        <input type="number" class="form-control" onkeyup="addValue(this,'phone','personal_details')" />
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Address:</label>
                     <div class="col-sm-6">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" 
-                                style="height: 100px" onkeyup="addValue(this,'address','personal_details')"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px"
+                                onkeyup="addValue(this,'address','personal_details')"></textarea>
                             <label for="floatingTextarea2"></label>
                         </div>
                     </div>
@@ -165,7 +161,7 @@
             <h2 class="mt-2">Languages:</h2>
             <div class="row">
                 <div class="col-3 mt-1">
-                    <input type="text" id="language"  aria-describedby="passwordHelpInline"
+                    <input type="text" id="language" aria-describedby="passwordHelpInline"
                         placeholder="language" /><button onclick="addArrayValue('language')">Add</button>
                 </div>
 
@@ -253,8 +249,7 @@
                 <div class="mb-3 row">
                     <label for="Date" class="col-sm-2 col-form-label">Date</label>
                     <div class="col-3 mt-2">
-                        <input type="date" class="form-control" id="date"
-                            onkeyup="addValue(this,'date',null)" />
+                        <input type="date" class="form-control" id="date" onkeyup="addValue(this,'date',null)" />
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -264,14 +259,14 @@
                     </div>
                 </div>
             </div>
-        <input class="btn btn-primary"  type="text" onclick="createResume()" value="submit">
+            <input class="btn btn-primary" type="text" onclick="createResume()" value="submit">
 
         </div>
 
         <section>
             <code id="output"></code>
         </section>
-
+    </div>
 
 </body>
 

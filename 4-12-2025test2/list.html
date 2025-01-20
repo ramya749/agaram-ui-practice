@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" type="module"></script>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>name</th>
+                <th>rollnumber</th>
+                <th>mathsscore</th>
+                <th>sciencescore</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="tlbody">
+
+        </tbody>
+    </table>
+    <div class="container">
+        <input type="hidden" id="updateid">
+        <h1>Student Management System</h1>
+        <lable for="name">Name:</lable>
+        <input type="text" placeholder="enter your name" id="updatename" onkeyup="addValue(this,'name',null)" />
+        <div>
+            <lable for="rollnumber">Roll Number:</lable>
+            <input type="number" placeholder="enter your number" id="updaterollnumber"
+                onkeyup="addValue(this,'rollnumber',null)" />
+        </div>
+        <div>
+            <h3>subject</h3>
+            <lable for="text">Subject:</lable>
+            <input type="text" placeholder="enter your subject" id="subject">
+            <button type="button" onclick="addValues('subject')">Add</button>
+        </div>
+        <ul id="table">
+            <li></li>
+        </ul>
+        <div>
+            <h3>Exam score:</h3>
+            <lable for="text">maths:</lable>
+            <input type="number" placeholder="enter your mark" id="updatemaths"
+                onkeyup="addValue(this,'maths','examscore')" />
+        </div>
+        <div>
+            <lable for="text">science:</lable>
+            <input type="number" placeholder="enter your mark" id="updatescience"
+                onkeyup="addValue(this,'science','examscore')" />
+        </div>
+        <h3>project:</h3>
+        <div>
+            <input type="text" placeholder="project_name" id="project_name">
+            <input type="number" placeholder="project_year" id="project_year">
+            <button type="button" onclick="addMultiValue('project','project_name','project_year')">Add</button>
+        </div>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>project_name</th>
+                    <th>project_year</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="table1">
+
+            </tbody>
+        </table>
+
+
+
+
+        <div>
+            <button type="text" id="submit" onclick="createOption()">Submit</button>
+        </div>
+    </div>
+    <button onclick="updateOption()">Update</button>
+
+
+    <section>
+        <code id="output"></code>
+    </section>
+   
+
+</body>
+
+
+</html>
