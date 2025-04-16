@@ -200,8 +200,7 @@ function display4() {
     };
     document.getElementById("tlllbody").innerHTML = trs;
 }
-
-
+   
 function display5() {
     let trs = " ";
     let index = 0;
@@ -235,8 +234,8 @@ function deleteedu(index, key) {
 
         }
     }
-
     resume[key] = a;
+
     if (key == "education") {
         display2();
     }
